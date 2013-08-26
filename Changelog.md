@@ -1,4 +1,16 @@
-# 0.0.11
+# 0.0.13
+
+Added `walk-update-scalars`.  This function allows you to apply
+a function `f` to every non-collection element in a map `m`.
+If `m` contains, sets, vectors, seqs, or inner maps, `f` is applied
+to their inner values, unless their inner values happen to be 
+sets, vectors, seqs, or inner maps- in which case, this is recursively
+applied until non-seqable values are reached.
+
+
+# 0.0.12
+
+
 
 Added `dissoc-in`. The performs `dissoc` on a path (represented as
 a vecter). This allows to `dissoc` nested keys, and is a big part of
@@ -10,8 +22,7 @@ Added `reassoc-in` and `reassoc-many`. In reality,
 which is why the documentation is so similar. Only difference
 is that `reassoc-in` takes one mapping (old path and new path), but `reassoc-many` takes a map of mappings.
 
-`reassoc-in` 
-Takes a map and relocates the value at the old path to
+`reassoc-in` Takes a map and relocates the value at the old path to
 the new path.
 
 If the old path is a vector it reads from that path;
@@ -32,6 +43,10 @@ If the key is a string it treats it as a top-level path;
 If the value is a vector it writes to that path;
 If the value is a string it treats it as a top-level path;
 If the value is nil, it removes the key-value pair.
+
+# 0.0.11
+
+This binary came out no different than 0.0.10, had to redeploy.
 
 # 0.0.10
 
