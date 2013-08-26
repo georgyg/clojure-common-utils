@@ -4,16 +4,6 @@
 
 ;; # Collections
 
-(defn every [pred coll]
-  (loop [coll (seq coll)]    
-    (if (empty? coll)
-      true
-      (if (pred (first coll))
-        (recur (next coll))
-        false))))
-
-
-
 (defn cross [& seqs]
   (when seqs
     (if-let [s (first seqs)]
